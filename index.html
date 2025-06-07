@@ -7,52 +7,111 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f0f6ff; color: #1a1a1a; line-height: 1.6; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #f0f6ff 0%, #ffffff 100%);
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
     header {
       background: #ffffff;
       padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
     header img {
-      max-width: 180px;
+      max-width: 160px;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #003366;
       margin-top: 1rem;
+      font-weight: 800;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .promo-banner {
+      background: #ffe600;
+      color: #000;
+      font-weight: 800;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border-bottom: 3px solid #003366;
     }
     .section {
       max-width: 900px;
-      margin: 3rem auto;
+      margin: 2rem auto;
       padding: 2rem;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     }
     .section h2 {
       color: #003366;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
     .section p {
       margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #333;
     }
-    .bonus-list li {
-      margin: 0.5rem 0;
+    ul {
+      padding-left: 1.2rem;
+      list-style: none;
+    }
+    ul li::before {
+      content: '✔️';
+      margin-right: 0.5rem;
+    }
+    .bonus-list li::before {
+      content: '🎁';
     }
     .cta {
       text-align: center;
       margin-top: 2rem;
     }
     .cta a {
-      background: #0055cc;
+      background: #ff6600;
       color: #fff;
       padding: 1rem 2rem;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .cta a:hover {
+      background: #cc5200;
+    }
+    .price-box {
+      background: #eaf4ff;
+      border: 2px dashed #0055cc;
+      padding: 1.5rem;
+      text-align: center;
+      border-radius: 10px;
+      margin: 2rem auto;
+    }
+    .price-box p {
+      font-size: 1.4rem;
+      color: #003366;
       font-weight: 600;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 0.5rem 0;
+    }
+    .price-box .old-price {
+      text-decoration: line-through;
+      color: #999;
+    }
+    .price-box .new-price {
+      font-size: 2rem;
+      color: #d90000;
+      font-weight: 800;
     }
     .testimonials, .footer {
       background: #eaf4ff;
@@ -71,6 +130,11 @@
       font-size: 0.9rem;
       color: #555;
     }
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      .section h2 { font-size: 1.4rem; }
+      .cta a { font-size: 1rem; padding: 0.8rem 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -80,9 +144,15 @@
     <p>Compreenda, acolha e transforme a jornada do seu filho com TDAH.</p>
   </header>
 
+  <div class="promo-banner">🔥 DE R$ 97,90 POR APENAS <span style="color:#d90000">R$ 19,90</span> - POR TEMPO LIMITADO! 🔥</div>
+
   <section class="section">
     <h2>Para pais que querem mais do que rótulos: querem soluções.</h2>
     <p>Este eBook foi criado com carinho e ciência para te ajudar a entender o TDAH Infantil de forma prática, humana e empática. Se você tem dúvidas, se sente perdido ou quer apoiar melhor o seu filho, este material é seu ponto de partida.</p>
+    <div class="price-box">
+      <p class="old-price">De R$ 97,90</p>
+      <p class="new-price">Por apenas R$ 19,90</p>
+    </div>
     <div class="cta">
       <a href="https://pay.hotmart.com/V99566857A?off=cvcja1j8" target="_blank">Quero o Meu eBook Agora</a>
     </div>
@@ -91,21 +161,21 @@
   <section class="section">
     <h2>O que você vai aprender:</h2>
     <ul>
-      <li>✔️ O que é o TDAH de verdade (sem mitos)</li>
-      <li>✔️ Como identificar sinais em casa e na escola</li>
-      <li>✔️ Estratégias práticas para lidar com comportamento</li>
-      <li>✔️ Técnicas de rotina, organização e acolhimento</li>
-      <li>✔️ Como trabalhar junto à escola e profissionais</li>
+      <li>O que é o TDAH de verdade (sem mitos)</li>
+      <li>Como identificar sinais em casa e na escola</li>
+      <li>Estratégias práticas para lidar com comportamento</li>
+      <li>Técnicas de rotina, organização e acolhimento</li>
+      <li>Como trabalhar junto à escola e profissionais</li>
     </ul>
   </section>
 
   <section class="section">
     <h2>Bônus Exclusivos (Grátis com o eBook!):</h2>
     <ul class="bonus-list">
-      <li>🎁 Checklist para Observação de Comportamentos</li>
-      <li>🎁 Sugestões de Livros e Filmes sobre TDAH</li>
-      <li>🎁 Modelo de Rotina Visual para Crianças com TDAH</li>
-      <li>🎁 Carta Modelo para Professores explicando o TDAH</li>
+      <li>Checklist para Observação de Comportamentos</li>
+      <li>Sugestões de Livros e Filmes sobre TDAH</li>
+      <li>Modelo de Rotina Visual para Crianças com TDAH</li>
+      <li>Carta Modelo para Professores explicando o TDAH</li>
     </ul>
     <div class="cta">
       <a href="https://pay.hotmart.com/V99566857A?off=cvcja1j8" target="_blank">Quero Garantir Meus Bônus!</a>
